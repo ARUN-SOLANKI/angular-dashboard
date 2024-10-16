@@ -1,0 +1,10 @@
+<nav class="wrapper">
+    <ul>
+        <div *ngFor="let item of menuItems" class="li" [ngClass]="{'active': item.path === activeRouteId}">
+            <!-- Use dynamic src for image based on active state -->
+            <img [src]="item.path === activeRouteId ? item.activeIcon : item.icon" alt="{{ item.name }}"
+                class="menu-icon" />
+            <a [routerLink]="item.path">{{ item.name }}</a>
+        </div>
+    </ul>
+</nav>
